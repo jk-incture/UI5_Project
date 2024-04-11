@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <VBox alignItems="Center" class='sapUiSmallMarginTop'>
+        <Text text="Content Fragment" />
+        <Text
+            text="SAPUI5 is a robust JavaScript-based framework developed by SAP for creating web applications. It stands for SAP User Interface 5, representing the fifth version of SAP's user interface technology. Designed with the enterprise in mind, SAPUI5 offers a comprehensive suite of tools and features tailored to meet the needs of modern business applications."
+            class='marginAndPadding'
+        />
+        <Text
+            text="SAPUI5 provides developers with a powerful toolkit for building enterprise-grade web applications that are feature-rich, scalable, and easy to maintain. Whether it's creating custom business applications, extending existing SAP solutions, or developing new digital experiences, SAPUI5 empowers developers to deliver exceptional user experiences that drive business value"
+            class='padding'
+        />
+    </VBox>
+</core:FragmentDefinition>

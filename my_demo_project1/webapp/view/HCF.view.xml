@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.HCF"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <App>
+        <pages>
+            <Page
+                id="page"
+                showHeader="true"
+                showNavButton="true"
+                navButtonPress="onBack"
+            >
+                <content>
+                    <core:Fragment
+                        fragmentName="com.incture.mydemoproject1.fragment.Header"
+                        type="XML"
+                    />
+                    <core:Fragment
+                        fragmentName="com.incture.mydemoproject1.fragment.Content"
+                        type="XML"
+                    />
+                    <Text
+                        text="{path: 'model>/value', formatter: '.formatter.colorFormatter'}"
+                        class="{$formatter>model>/color}"
+                    />
+                </content>
+                <footer>
+                    <core:Fragment
+                        fragmentName="com.incture.mydemoproject1.fragment.Footer"
+                        type="XML"
+                    />
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

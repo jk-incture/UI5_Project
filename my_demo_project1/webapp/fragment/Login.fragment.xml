@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="helloDialog"
+        title="Login Page"
+    >
+        <content>
+            <Text text="Login successful" class="sapUiSmallMargin" />
+            <Input type="Text" id="idInpText"></Input>
+            <Button press="getInputData" text="click"></Button>
+            <Select change="onSelectChange">
+                <core:Item text="one" key="en"></core:Item>
+                <core:Item text="two" key="fr"></core:Item>
+            </Select>
+        </content>
+        <endButton>
+            <Button text="Close" press="onCloseDialog"></Button>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

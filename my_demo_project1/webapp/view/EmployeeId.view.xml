@@ -1,0 +1,93 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.EmployeeId"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Employee Information"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <ObjectHeader
+                title="{Name}"
+                number="{Department}"
+                numberUnit="{Gender}"
+            >
+                <attributes>
+                    <ObjectAttribute
+                        title="Location"
+                        text="{BaseLocation}"
+                    />
+                </attributes>
+                <!-- <statuses>
+                    <ObjectStatus text="{emploc}" />
+                </statuses> -->
+            </ObjectHeader>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter icon="sap-icon://call">
+                        <f:SimpleForm
+                            title="Emergency Contact"
+                            class="sapUiSmallMarginTop"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            editable="true"
+                        >
+                            <f:content>
+                                <Label text="Name" />
+                                <Text
+                                    id="idTxtName"
+                                    text="{AdditionalDetails/EmergencyContact/Name}"
+                                />
+                                <Label text="Phone no." />
+                                <Text
+                                    id="idTxtNumber"
+                                    text="{AdditionalDetails/EmergencyContact/Number}"
+                                />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+
+                    <IconTabFilter icon="sap-icon://home">
+                        <f:SimpleForm
+                            title="Emergency Address"
+                            class="sapUiSmallMarginTop"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            editable="true"
+                        >
+                            <f:content>
+                                <Label text="Street" />
+                                <Text
+                                    id="idTxtStreet"
+                                    text="{AdditionalDetails/HomeAddress/Street}"
+                                />
+                                <Label text="Flat no." />
+                                <Text
+                                    id="idTxtFlatNo"
+                                    text="{AdditionalDetails/HomeAddress/FlatNo}"
+                                />
+                                <Label text="City" />
+                                <Text
+                                    id="idTxtCity"
+                                    text="{AdditionalDetails/HomeAddress/City}"
+                                />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

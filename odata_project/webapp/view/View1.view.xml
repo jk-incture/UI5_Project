@@ -1,0 +1,128 @@
+<mvc:View
+    controllerName="com.incture.odataproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <!-- Question 1 -->
+            <Table items="{employees>/data}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Text text="Employees" />
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column>
+                        <Text text="S.No." />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Title" />
+                    </Column>
+                    <Column>
+                        <Text text="DOB" />
+                    </Column>
+                    <Column>
+                        <Text text="Hire Date" />
+                    </Column>
+                    <Column>
+                        <Text text="Address" />
+                    </Column>
+                    <Column>
+                        <Text text="Postal Code" />
+                    </Column>
+                    <Column>
+                        <Text text="Country" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{employees>EmployeeID}" />
+                            <Text
+                                text="{employees>FirstName} {employees>LastName}"
+                            />
+                            <Text text="{employees>Title}" />
+                            <Text text="{employees>BirthDate}" />
+                            <Text text="{employees>HireDate}" />
+                            <Text
+                                text="{employees>Address}, {employees>City}, {employees>Region}"
+                            />
+                            <Text text="{employees>PostalCode}" />
+                            <Text text="{employees>Country}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <!-- Question 2 -->
+            <List
+                id="customersList"
+                items="{customers>/data}"
+                class="sapUiLargeMarginTop"
+                growing="true"
+                growingThreshold="5"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Text text="Customers" />
+                        <ToolbarSpacer />
+                        <SearchField
+                            id="search"
+                            width="400px"
+                            liveChange="onSearchCustomer"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <ObjectListItem
+                        title="{customers>ContactName}"
+                        number="{customers>CompanyName}"
+                        numberUnit="{customers>Phone}"
+                    >
+                        <attributes>
+                            <ObjectAttribute
+                                title="ID"
+                                text="{customers>CustomerID}"
+                            />
+                            <ObjectAttribute
+                                title="Title"
+                                text="{customers>ContactTitle}"
+                            />
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus
+                                text="{customers>Address}, {customers>City} - {customers>PostalCode}"
+                            />
+                        </firstStatus>
+                        <secondStatus>
+                            <ObjectStatus text="{customers>Country}" />
+                        </secondStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+
+            <!-- Question 3 -->
+            <List
+                items="{path: '/Invoices', sorter: [{path: 'ShipperName', descending: false, group: true}]}"
+            >
+                <items>
+                    <StandardListItem
+                        title="{ShipName}"
+                        description="{CustomerName}"
+                        info="{ShipperName}"
+                    />
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

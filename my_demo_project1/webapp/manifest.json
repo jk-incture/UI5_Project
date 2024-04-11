@@ -1,0 +1,372 @@
+{
+  "_version": "1.59.0",
+
+  "sap.app": {
+    "id": "com.incture.mydemoproject1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.12.3",
+      "toolsId": "797ba92f-0d25-4c06-be64-8a1f8d37485c"
+    },
+
+    "dataSources": {
+      "invoiceRemote": {
+				"uri": "V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+      "users": {
+        "uri": "",
+        "type": "JSON"
+      }
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": false,
+
+    "dependencies": {
+      "minUI5Version": "1.120.6",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.incture.mydemoproject1.i18n.i18n",
+          "supportedLocales": ["en", "ar", "fr"],
+          "fallbackLocale": "en"
+        }
+      },
+      "invoice": {
+				"dataSource": "invoiceRemote"
+			}
+    },
+
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.incture.mydemoproject1.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false,
+        "bypassed": {
+          "target": "notFound"
+        }
+      },
+
+      "routes": [
+        {
+          "name": "RouteDemoView",
+          "pattern": "",
+          "target": [
+            "TargetDemoView"
+          ]
+        },
+        {
+          "name": "RouteSecondView",
+          "pattern": "secondview",
+          "target":[
+            "TargetSecondView"
+          ]
+        },
+        {
+          "name": "RouteSecondViewParameter",
+          "pattern": "secondview/{id}",
+          "target":[
+            "TargetSecondView"
+          ]
+        },
+        {
+          "name": "RouteSecondViewQuery",
+          "pattern": "secondview/:?query:",
+          "target":[
+            "TargetSecondView"
+          ]
+        },
+        {
+          "name": "RouteLayouts",
+          "pattern": "layouts",
+          "target":[
+            "TargetLayouts"
+          ]
+        },
+        {
+          "name": "RouteFormValidation",
+          "pattern": "formvalidation",
+          "target":[
+            "TargetFormValidation"
+          ]
+        },
+        {
+          "name": "RouteFormPreview",
+          "pattern": "formpreview",
+          "target":[
+            "TargetFormPreview"
+          ]
+        },
+        {
+          "name": "RouteMultivaluedUI",
+          "pattern": "multivaluedui",
+          "target":[
+            "TargetMultivaluedUI"
+          ]
+        },
+        {
+          "name": "RouteListPreview",
+          "pattern": "listpreview/{Index}",
+          "target":[
+            "TargetListPreview"
+          ]
+        },
+        {
+          "name": "RouteF4Help",
+          "pattern": "f4help",
+          "target":[
+            "TargetF4Help"
+          ]
+        },
+        {
+          "name": "RouteCarBooking",
+          "pattern": "carbooking",
+          "target":[
+            "TargetCarBooking"
+          ]
+        },
+        {
+          "name": "RouteDialogFragments",
+          "pattern": "dialogfragments",
+          "target": [
+            "TargetDialogFragments"
+          ]
+        },
+        {
+          "name": "RouteHCF",
+          "pattern": "hcf",
+          "target": [
+            "TargetHCF"
+          ]
+        },
+        {
+          "name": "RouteI18nForm",
+          "pattern": "i18nform",
+          "target": [
+            "TargetI18nForm"
+          ]
+        },
+        {
+          "name": "RouteEmployees",
+          "pattern": "employees",
+          "target": [
+            "TargetEmployees"
+          ]
+        },
+        {
+          "name": "RouteEmployeeId",
+          "pattern": "employeeid/{id}",
+          "target":[
+            "TargetEmployeeId"
+          ]
+        },
+        {
+          "name": "RouteLogin",
+          "pattern": "login",
+          "target": [
+            "TargetLogin"
+          ]
+        },
+        {
+          "name": "RouteSplitContainer",
+          "pattern": "split",
+          "target": [
+            "TargetSplitContainer"
+          ]
+        }
+      ],
+
+      "targets": {
+        "notFound":{
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "NotFound",
+          "viewName": "NotFound"
+        },
+        "TargetDemoView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DemoView",
+          "viewName": "DemoView"
+        },
+        "TargetSecondView": {
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewId": "Second",
+          "viewName": "Second"
+        },
+        "TargetLayouts": {
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewId": "Layouts",
+          "viewName": "Layouts"
+        },
+        "TargetFormValidation": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "FormValidation",
+          "viewName": "FormValidation"
+        },
+        "TargetFormPreview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "FormPreview",
+          "viewName": "FormPreview"
+        },
+        "TargetMultivaluedUI": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "MultivaluedUI",
+          "viewName": "MultivaluedUI"
+        },
+        "TargetListPreview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ListPreview",
+          "viewName": "ListPreview"
+        },
+        "TargetF4Help": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "F4Help",
+          "viewName": "F4Help"
+        },
+        "TargetCarBooking": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "CarBooking",
+          "viewName": "CarBooking"
+        },
+        "TargetDialogFragments": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DialogFragments",
+          "viewName": "DialogFragments"
+        },
+        "TargetHCF": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "HCF",
+          "viewName": "HCF"
+        },
+        "TargetI18nForm": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "I18nForm",
+          "viewName": "I18nForm"
+        },
+        "TargetEmployees": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Employees",
+          "viewName": "Employees"
+        },
+        "TargetEmployeeId": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "EmployeeId",
+          "viewName": "EmployeeId"
+        },
+        "TargetLogin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Login",
+          "viewName": "Login"
+        },
+        "TargetSplitContainer": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "SplitContainer",
+          "viewName": "SplitContainer"
+        }
+      }
+    },
+
+    "rootView": {
+      "viewName": "com.incture.mydemoproject1.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

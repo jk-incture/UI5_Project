@@ -1,0 +1,85 @@
+/* Enter your custom styles here */
+
+.myTextColor{
+    color: rgb(41, 190, 4);
+}
+
+.myTextFont{
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.labelFont{
+    font-size: 1rem;
+}
+
+.mybackgroundcolor{
+    background-color: rgb(1, 34, 34);
+    width: 300px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.margintop{
+    margin-top: 1.2rem;
+}
+
+.loginBtn{
+    margin-top: 0.8rem;
+}
+
+.marginAndPadding{
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.padding{
+    padding: 1rem;
+}
+
+.border{
+    border: 1px solid;
+}
+
+/* .styleLabel{
+    font-size: 1.1rem;
+    padding: 10px;
+    background-color: yellow;
+} */
+
+.highColor{
+    color: red;
+}
+
+.mediumColor{
+    color: orange;
+}
+
+.lowColor{
+    color: green;
+}
+
+.image{
+    filter: brightness(50%);
+    z-index: -10;
+    width: 100%;
+    object-fit: contain;
+}
+
+.background{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editText{
+    color: whitesmoke;
+    font-size: 3rem;
+    font-weight: bold;
+    position: fixed;
+    top: 50%;
+    z-index: 100;
+}

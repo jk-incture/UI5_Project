@@ -1,0 +1,11 @@
+<mvc:View controllerName="com.incture.mydemoproject1.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+    <!-- Don't add page tag for App, as it is a basement for other views, it doesn't need to be shown on the page. The App.view.xml is a view container and it is used to contain other views, not to appear as a page. -->
+
+    <!-- This App element is the view container. -->
+    <App id="app">
+    </App>
+</mvc:View>

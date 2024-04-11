@@ -1,0 +1,72 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog title="Select an employee">
+        <Table
+            id="idTableEmp"
+            items="{/aEmployees}"
+            mode="SingleSelectMaster"
+            selectionChange="onSelectEmpFromF4"
+        >
+            <headerToolbar>
+                <Toolbar>
+                    <Text
+                        text="Employees Table"
+                        class="sapMH3FontSize"
+                    />
+                    <ToolbarSpacer />
+                    <SearchField
+                        width="30%"
+                        liveChange="onSearchEmpTable"
+                    />
+                    <Button
+                        icon="sap-icon://sort-ascending"
+                        press="sortAscTable"
+                    />
+                    <Button
+                        icon="sap-icon://sort-descending"
+                        press="sortDescTable"
+                    />
+                </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column>
+                    <Text text="Employee ID" />
+                </Column>
+                <Column>
+                    <Text text="Employee Name" />
+                </Column>
+                <Column>
+                    <Text text="Employee Designation" />
+                </Column>
+                <Column>
+                    <Text text="Employee Skill" />
+                </Column>
+                <Column>
+                    <Text text="Employee Email" />
+                </Column>
+                <Column>
+                    <Text text="Employee Location" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{empid}" />
+                        <Text text="{empname}" />
+                        <Text text="{empdesig}" />
+                        <Text text="{empskill}" />
+                        <Text text="{empemail}" />
+                        <Text text="{emploc}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <endButton>
+            <Button text="Close" press="onClose"></Button>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

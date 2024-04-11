@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="productDialog"
+        title="Product Details"
+    >
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Label
+                    text="{productName}"
+                    design="Bold"
+                />
+                <Text
+                    text="Price: {unitPrice}"
+                    width="100%"
+                />
+                <Input
+                    placeholder="Enter discount"
+                    type="Number"
+                    id="idInpDiscount"
+                />
+                <Button
+                    type="Emphasized"
+                    press="onCalculateDiscount"
+                    text="Calculate"
+                />
+            </VBox>
+        </content>
+        <endButton>
+            <Button
+                text="Close"
+                press="onCloseProductDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

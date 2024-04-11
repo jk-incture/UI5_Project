@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Bar>
+        <contentMiddle>
+            <Label
+                text="Header Fragment"
+                class='sapUiSmallMarginEnd'
+            />
+            <Button
+                type="Emphasized"
+                text="Click me"
+                press="show"
+            />
+        </contentMiddle>
+    </Bar>
+</core:FragmentDefinition>

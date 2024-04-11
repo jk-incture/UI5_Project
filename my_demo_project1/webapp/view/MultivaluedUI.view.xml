@@ -1,0 +1,240 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    controllerName="com.incture.mydemoproject1.controller.MultivaluedUI"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Multivalued and Composite UI Elements"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <f:SimpleForm
+                editable="true"
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="5"
+                emptySpanM="5"
+                layout="ResponsiveGridLayout"
+            >
+                <f:content>
+                    <!-- Select -->
+                    <Label text="Select Relation" />
+
+                    <!-- In select tag, the items take a path of the model, where the data is stored. Now, the items work as a loop, and loop through every element present in the array and show it in the UI. -->
+
+                    <Select
+                        items="{/aRelations}"
+                        change="onSelectRln"
+                    >
+                        <!-- Just like we attach press event to the button, similarily there is change event for the select tag -->
+                        <core:Item text="{relation}" />
+                        <!-- text = "{relation}" Here, relation is the key of every object in the array present in the model. -->
+                    </Select>
+
+                    <!-- Combo Box -->
+                    <Label text="Select relation - ComboBox" />
+                    <!-- In combo box, there is selectionChange event which is same as change event in select tag -->
+                    <ComboBox
+                        items="{/aRelations}"
+                        selectionChange="onSelectRelCB"
+                    >
+                        <core:Item text="{relation}" />
+                    </ComboBox>
+
+                    <!-- Difference between select and combobox is that, in select first value is selected by default and in combobox no any value is selected by default. -->
+
+                    <!-- Multi combo box -->
+                    <!-- Using multi combo box, we can select multiple values. -->
+                    <Label text="Select the languages you know" />
+                    <!-- In multicombobox, the event is selectionFinish, i.e, when we finish selecting our choices, then it will be triggered. -->
+                    <MultiComboBox
+                        items="{/aLanguages}"
+                        selectionFinish="onSelectLanguages"
+                    >
+                        <core:Item text="{language}" />
+                    </MultiComboBox>
+
+                    <!-- RadioButtonGroup -->
+                    <Label text="Gender" />
+                    <!-- In radio button group, the select event is used which will give the selected index. -->
+                    <RadioButtonGroup
+                        buttons="{/aGender}"
+                        columns="3"
+                        select="onSelectGender"
+                    >
+                        <!-- The columns attribute is used for showing all the radio buttons side by side. Here, we have 3 values so columns = 3 -->
+                        <RadioButton text="{gender}" />
+                    </RadioButtonGroup>
+
+                    <!-- Single check box -->
+                    <Label text="Are you married ?" />
+                    <CheckBox select="onSelectChBox" />
+                </f:content>
+            </f:SimpleForm>
+
+            <!-- List -->
+            <List
+                id="idListEmp"
+                items="{/aEmployees}"
+                mode="SingleSelectMaster"
+                selectionChange="onSelectEmployee"
+            >
+                <!-- mode = SingleSelectMaster means we can select any element of the list. -->
+                <!-- And the action associated with list is: selectionChange -->
+
+                <headerToolbar>
+                    <Toolbar>
+                        <!-- If we write the header text inside the toolbar, then it overwrites the headerText attribute of List, so no need to write that. -->
+                        <Text
+                            text="Employees List"
+                            class="sapMH3FontSize"
+                        />
+
+                        <!-- Toolbar spacer will come between text field and search field, and creates a space between them. -->
+                        <ToolbarSpacer />
+                        <SearchField
+                            width="30%"
+                            liveChange="onSearchEmp"
+                        />
+                        <Button
+                            icon="sap-icon://sort-ascending"
+                            press="sortAsc"
+                        />
+                        <Button
+                            icon="sap-icon://sort-descending"
+                            press="sortDesc"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+
+                <ObjectListItem
+                    title="{empname}"
+                    number="{empid}"
+                    numberUnit="{empdesig}"
+                >
+                    <!-- The extra data below the title is called attributes, and we can add any no. of attributes. Every attribute will have a title and a text property -->
+                    <attributes>
+                        <ObjectAttribute
+                            title="Skill"
+                            text="{empskill}"
+                        />
+                        <ObjectAttribute
+                            title="Email"
+                            text="{empemail}"
+                        />
+                    </attributes>
+
+                    <!-- There can be maximum of 2 staus in a list -->
+                    <firstStatus>
+                        <ObjectStatus text="{emploc}" />
+                    </firstStatus>
+                </ObjectListItem>
+            </List>
+
+            <!-- Table -->
+            <Table
+                id="idTableEmp"
+                items="{/aEmployees}"
+                mode="SingleSelectMaster"
+                selectionChange="onSelectEmployee"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Text
+                            text="Employees Table"
+                            class="sapMH3FontSize"
+                        />
+                        <ToolbarSpacer />
+                        <SearchField
+                            width="30%"
+                            liveChange="onSearchEmpTable"
+                        />
+                        <Button
+                            icon="sap-icon://sort-ascending"
+                            press="sortAscTable"
+                        />
+                        <Button
+                            icon="sap-icon://sort-descending"
+                            press="sortDescTable"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+
+                <!-- Columns is like thead in html, and a Column is the th in html -->
+                <columns>
+                    <Column>
+                        <Text text="Employee ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Employee Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Employee Designation" />
+                    </Column>
+                    <Column>
+                        <Text text="Employee Skill" />
+                    </Column>
+                    <Column>
+                        <Text text="Employee Email" />
+                    </Column>
+                    <Column>
+                        <Text text="Employee Location" />
+                    </Column>
+                </columns>
+
+                <!-- This items tab will be like tbody in html -->
+                <items>
+                    <!-- ColumnListItem represents a table row (tr) and cells represent <td> in html. Now for every object in the /aEmployees, this ColumnListItem will be iterated. -->
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{empid}" />
+                            <Text text="{empname}" />
+                            <Text text="{empdesig}" />
+                            <Text text="{empskill}" />
+                            <Text text="{empemail}" />
+                            <Text text="{emploc}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <Panel
+                id="pCards"
+                expandable="true"
+                headerText="Card Details"
+                width="auto"
+                class="sapUiResponsiveMargin"
+            >
+                <content>
+                    <List
+                        id="cardList"
+                        items="{/cardDetails}"
+                        width="50%"
+                    >
+                        <items>
+                            <StandardListItem
+                                title="{=${cardCompany}.toUpperCase()} ({cardNumber})"
+                                description="{=${cardType}.toUpperCase()}, Assigned on: {assignedDate}"
+                                icon="sap-icon://credit-card"
+                                iconInset="false"
+                                highlight="{=${state} === true ? 'Success' : 'Error'}"
+                                info="{=${state} === true ? 'Active' : 'Expired'}"
+                                infoState="{=${state} === true ? 'Success' : 'Error'}"
+                                infoStateInverted="true"   
+                            />
+                            <!-- infoStateInverted set to true will show the color set by infoState -->
+                            <!-- highlight will set the highlight color to the list item -->
+                            <!-- =${} is the expression binding syntax -->
+                        </items>
+                    </List>
+                </content>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

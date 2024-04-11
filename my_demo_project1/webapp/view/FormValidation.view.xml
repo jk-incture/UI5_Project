@@ -1,0 +1,59 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.FormValidation"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Form Validation"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <f:SimpleForm
+                title="Employee Information"
+                class="sapUiSmallMarginTop"
+                layout="ResponsiveGridLayout"
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="4"
+                emptySpanM="4"
+                editable="true"
+            >
+                <f:content>
+                    <Label text="Employee ID" required="true" />
+                    <Input type="Number" id="idEmpId" value="{/empid}" />
+
+                    <!-- value="{/empid}" establish a unidirectional data binding between the value property of the Input control and the corresponding property (empid, empname, etc.) in the model. This means that whenever the value of the Input control changes, the corresponding property in the model is automatically updated, and vice versa. This automatic updating happens due to the two-way data binding mechanism provided by SAPUI5. -->
+
+                    <Label text="Employee Name" required="true" />
+                    <Input type="Text" id="idEmpName" maxLength="20" value="{/empname}" />
+
+                    <Label text="Employee Designation" required="true" />
+                    <Input type="Text" id="idEmpDesig" value="{/empdesig}" />
+
+                    <Label text="Employee Skill" required="true" />
+                    <Input type="Text" id="idEmpSkill" value="{/empskill}" />
+
+                    <Label text="Employee Email" required="true" />
+                    <Input type="Email" id="idEmpEmail" value="{/empemail}" />
+
+                    <Label text="Employee Phone" required="true" />
+                    <Input type="Tel" id="idEmpPhone" value="{/empphone}" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button text="Preview" press="onPreview" type="Emphasized"></Button>
+                    <Button text="Submit" press="onSubmit" type="Emphasized"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

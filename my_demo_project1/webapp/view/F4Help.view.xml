@@ -1,0 +1,44 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    controllerName="com.incture.mydemoproject1.controller.F4Help"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Multivalued and Composite UI Elements"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <!-- F4 Help -->
+            <f:SimpleForm
+                title="F4 Help"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="4"
+                emptySpanM="4"
+                class="sapUiMediumMarginTop"
+            >
+                <f:content>
+                    <Label
+                        text="Select Employee ID"
+                        required="true"
+                    />
+                    <Input
+                        id="idIpEmpId"
+                        showValueHelp="true"
+                        valueHelpRequest="onF4HelpPress"
+                    />
+                    <!-- showValueHelp shows a help button in right corner of input field. Either you press F4 button on keyboard, or click this F4 help button, both are same -->
+                    <!-- The action for this help button is valueHelpRequest -->
+                </f:content>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

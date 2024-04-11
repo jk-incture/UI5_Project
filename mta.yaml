@@ -1,0 +1,92 @@
+_schema-version: "3.2"
+ID: First_UI5_Project
+version: 0.0.1
+modules:
+- name: First_UI5_Project-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: First_UI5_Project-destination-service
+    parameters:
+      content-target: true
+  - name: First_UI5_Project_html_repo_host
+    parameters:
+      service-key:
+        name: First_UI5_Project_html_repo_host-key
+  - name: uaa_First_UI5_Project
+    parameters:
+      service-key:
+        name: uaa_First_UI5_Project-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: ui5_project_app_router_First_UI5_Project_html_repo_host
+          ServiceInstanceName: First_UI5_Project-html5-app-host-service
+          ServiceKeyName: First_UI5_Project_html_repo_host-key
+          sap.cloud.service: ui5-project-app-router
+        - Authentication: OAuth2UserTokenExchange
+          Name: ui5_project_app_router_uaa_First_UI5_Project
+          ServiceInstanceName: First_UI5_Project-xsuaa-service
+          ServiceKeyName: uaa_First_UI5_Project-key
+          sap.cloud.service: ui5-project-app-router
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: First_UI5_Project-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: First_UI5_Project_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - cominctureodataproject.zip
+      name: cominctureodataproject
+      target-path: resources/
+- name: cominctureodataproject
+  type: html5
+  path: odata_project
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: First_UI5_Project-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: First_UI5_Project-destination-service
+    service-plan: lite
+- name: First_UI5_Project_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: First_UI5_Project-html5-app-host-service
+    service-plan: app-host
+- name: uaa_First_UI5_Project
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: First_UI5_Project-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo

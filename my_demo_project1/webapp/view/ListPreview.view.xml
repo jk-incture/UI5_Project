@@ -1,0 +1,93 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.ListPreview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="List Preview"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <ObjectHeader
+                title="{empname}"
+                number="{empid}"
+                numberUnit="{empdesig}"
+            >
+                <attributes>
+                    <ObjectAttribute
+                        title="Skills"
+                        text="{empskill}"
+                    />
+                    <ObjectAttribute
+                        title="Email"
+                        text="{empemail}"
+                    />
+                </attributes>
+                <statuses>
+                    <ObjectStatus text="{emploc}" />
+                </statuses>
+            </ObjectHeader>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter icon="sap-icon://hint">
+                        <f:SimpleForm
+                            title="Employee Information Preview - List"
+                            class="sapUiSmallMarginTop"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            editable="true"
+                        >
+                            <f:content>
+                                <Label text="ID" />
+                                <Text
+                                    id="idTxtId"
+                                    text="{empid}"
+                                />
+
+                                <!-- Since, we are doing element binding, so no need to put a slash while retreiving the property -->
+
+                                <Label text="Name" />
+                                <Text
+                                    id="idTxtName"
+                                    text="{empname}"
+                                />
+
+                                <Label text="Designation" />
+                                <Text
+                                    id="idTxtDesig"
+                                    text="{empdesig}"
+                                />
+
+                                <Label text="Skill" />
+                                <Text
+                                    id="idTxtSkill"
+                                    text="{empskill}"
+                                />
+
+                                <Label text="Email" />
+                                <Text
+                                    id="idTxtEmail"
+                                    text="{empemail}"
+                                />
+
+                                <Label text="Location" />
+                                <Text
+                                    id="idTxtPhone"
+                                    text="{emploc}"
+                                />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

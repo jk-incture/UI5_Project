@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.FormPreview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Form Preview"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <f:SimpleForm
+                title="Employee Information Preview"
+                class="sapUiSmallMarginTop"
+                layout="ResponsiveGridLayout"
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="4"
+                emptySpanM="4"
+                editable="true"
+            >
+                <f:content>
+                    <Label text="Employee ID" />
+                    <Text id="idTxtId" text="{/empid}" />
+
+                    <Label text="Employee Name" />
+                    <Text id="idTxtName" text="{/empname}" />
+
+                    <Label text="Employee Designation" />
+                    <Text id="idTxtDesig" text="{/empdesig}" />
+
+                    <Label text="Employee Skill" />
+                    <Text id="idTxtSkill" text="{/empskill}" />
+
+                    <Label text="Employee Email" />
+                    <Text id="idTxtEmail" text="{/empemail}" />
+
+                    <Label text="Employee Phone" />
+                    <Text id="idTxtPhone" text="{/empphone}" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

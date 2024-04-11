@@ -1,0 +1,145 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.SplitContainer"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+>
+    <Page
+        id="page"
+        title="MASTER DETAIL PAGE"
+    >
+        <headerContent>
+            <Button
+                text="Logout"
+                type="Emphasized"
+                press="onOpenLogout"
+            />
+        </headerContent>
+        <content>
+            <SplitContainer
+                id="MySplitContainer"
+                initialDetail="detail"
+                initialMaster="master"
+            >
+                <masterPages>
+                    <Page
+                        title="Your Favourites"
+                        backgroundDesign="List"
+                    >
+                        <List itemPress="onListItemPress">
+                            <StandardListItem
+                                title="HOME"
+                                type="Active"
+                                class="sapUiSmallMargin"
+                                custom:to="home"
+                            />
+                            <StandardListItem
+                                title="PRODUCTS"
+                                type="Active"
+                                class="sapUiSmallMargin"
+                                custom:to="products"
+                            />
+                            <StandardListItem
+                                title="ABOUT"
+                                type="Active"
+                                class="sapUiSmallMargin"
+                                custom:to="about"
+                            />
+                            <StandardListItem
+                                title="CONTACT"
+                                type="Active"
+                                class="sapUiSmallMargin"
+                                custom:to="contact"
+                            />
+                        </List>
+                    </Page>
+                </masterPages>
+                <detailPages>
+                    <Page
+                        id="home"
+                        title="Home"
+                        backgroundDesign="Solid"
+                    >
+                        <FlexBox
+                            justifyContent="Center"
+                            alignItems="Center"
+                            class="pos"
+                        >
+                            <html:div class="background">
+                                <html:img
+                                    src="../images/home.jpg"
+                                    class="image"
+                                />
+                                <html:p class="editText">
+                                    HOME
+                                </html:p>
+                            </html:div>
+                        </FlexBox>
+                    </Page>
+                    <Page
+                        id="products"
+                        title="Products"
+                        backgroundDesign="Solid"
+                    >
+                        <FlexBox
+                            justifyContent="Center"
+                            alignItems="Center"
+                        >
+                            <html:div class="background">
+                                <html:img
+                                    src="../images/products.jpg"
+                                    class="image"
+                                />
+                                <html:p class="editText">
+                                    PRODUCTS
+                                </html:p>
+                            </html:div>
+                        </FlexBox>
+                    </Page>
+                    <Page
+                        id="about"
+                        title="About Us"
+                        backgroundDesign="Solid"
+                    >
+                        <FlexBox
+                            justifyContent="Center"
+                            alignItems="Center"
+                        >
+                            <html:div class="background">
+                                <html:img
+                                    src="../images/about.jpg"
+                                    class="image"
+                                />
+                                <html:p class="editText">
+                                    ABOUT US
+                                </html:p>
+                            </html:div>
+                        </FlexBox>
+                    </Page>
+                    <Page
+                        id="contact"
+                        title="Contact"
+                        backgroundDesign="Solid"
+                    >
+                        <FlexBox
+                            justifyContent="Center"
+                            alignItems="Center"
+                        >
+                            <html:div class="background">
+                                <html:img
+                                    src="../images/contact.jpg"
+                                    class="image"
+                                />
+                                <html:p class="editText">
+                                    CONTACT
+                                </html:p>
+                            </html:div>
+                        </FlexBox>
+                    </Page>
+                </detailPages>
+            </SplitContainer>
+        </content>
+    </Page>
+</mvc:View>

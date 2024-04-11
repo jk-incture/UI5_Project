@@ -1,0 +1,323 @@
+<mvc:View
+    xmlns:table="sap.ui.table"
+    controllerName="com.incture.mydemoproject1.controller.DemoView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Button
+                class="sapUiSmallMargin"
+                id="greetBtn1"
+                text="{i18n>BUTTON_TEXT}"
+                type="Emphasized"
+                press="onBtnClick"
+            />
+            <Button
+                class="sapUiSmallMargin"
+                id="greetBtn2"
+                text="Greetings"
+                type="Success"
+                press="onBtnClick"
+            />
+            <Button
+                class="sapUiSmallMargin"
+                id="greetBtn3"
+                text="Greetings"
+                type="Negative"
+                press="onBtnClick"
+            />
+            <Button
+                class="sapUiSmallMargin"
+                id="greetBtn4"
+                text="Greetings"
+                type="Accept"
+                press="onBtnClick"
+            />
+            <Button
+                class="sapUiSmallMargin"
+                id="destoryBtn"
+                text="Destory this view"
+                type="Critical"
+                press="onDestroyView"
+            />
+            <Button
+                class="sapUiSmallMargin"
+                id="btn"
+                text="Click me"
+                press="onShow"
+            />
+
+            <VBox id="idVbox">
+                <!-- Local Model -->
+                <Label
+                    class="sapUiSmallMargin"
+                    id="label1"
+                    design="Bold"
+                    text="{oLocalModel>/modelData}, {oLocalModel>/data/0/name}"
+                />
+
+                <!-- GlobalModel -->
+                <Label
+                    id="label2"
+                    class="sapUiSmallMargin"
+                    design="Bold"
+                    text="{/test}, {/aRelations/0/relation}"
+                />
+
+                <!-- Input -->
+                <Label
+                    id="label3"
+                    text="Password"
+                    labelFor="passwordInput"
+                />
+                <Input
+                    id="passwordInput"
+                    type="Password"
+                    placeholder="Enter password"
+                    submit="onPasswordSubmit"
+                />
+            </VBox>
+
+            <FlexBox
+                width="100%"
+                justifyContent="SpaceAround"
+            >
+                <VBox>
+                    <Text
+                        text="Combo Box"
+                        class="sapUiSmallMarginBottom boldText"
+                    />
+                    <ComboBox>
+                        <core:Item
+                            key="India"
+                            text="India"
+                        />
+                        <core:Item
+                            key="USA"
+                            text="USA"
+                        />
+                        <core:Item
+                            key="France"
+                            text="France"
+                        />
+                        <core:Item
+                            key="Germany"
+                            text="Germany"
+                        />
+                        <core:Item
+                            key="Russia"
+                            text="Russia"
+                        />
+                        <core:Item
+                            key="Rome"
+                            text="Rome"
+                        />
+                        <core:Item
+                            key="Netherlands"
+                            text="Netherlands"
+                        />
+                        <core:Item
+                            key="Australia"
+                            text="Australia"
+                        />
+                    </ComboBox>
+                </VBox>
+
+                <VBox>
+                    <Text
+                        text="Date Picker"
+                        class="sapUiSmallMarginBottom boldText"
+                    />
+                    <DatePicker placeholder="Choose a date" />
+                </VBox>
+            </FlexBox>
+
+            <Table
+                id="idTableUsers"
+                items="{users>/}"
+                mode="SingleSelectMaster"
+                selectionChange="onSelectUser"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Text text="Users Data" />
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column>
+                        <Text text="S.No" />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Username" />
+                    </Column>
+                    <Column>
+                        <Text text="Email" />
+                    </Column>
+                    <Column>
+                        <Text text="Address" />
+                    </Column>
+                    <Column>
+                        <Text text="Phone no." />
+                    </Column>
+                    <Column>
+                        <Text text="Website" />
+                    </Column>
+                    <Column>
+                        <Text text="Company" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{users>id}" />
+                            <Text text="{users>name}" />
+                            <Text text="{users>username}" />
+                            <Text text="{users>email}" />
+                            <Text
+                                text="{users>address/street}, {users>address/suite}, {users>address/city}"
+                            />
+                            <Text text="{users>phone}" />
+                            <Text text="{users>website}" />
+                            <Text text="{users>company/name}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <FlexBox
+                wrap="Wrap"
+                justifyContent="SpaceAround"
+                alignItems="Center"
+                class="sapUiSmallMargin"
+            >
+                <Button
+                    text="Second view"
+                    id="routeSecond"
+                    type="Default"
+                    press="onRouteSecondView"
+                />
+                <Button
+                    text="Second view with Parameters"
+                    id="routeSecondParam"
+                    type="Default"
+                    press="onRouteSecondViewWithParams"
+                />
+                <Button
+                    text="Second view with query"
+                    id="routeSecondQuery"
+                    type="Default"
+                    press="onRouteSecondViewWithQuery"
+                />
+                <Button
+                    text="Layouts"
+                    id="routeLayouts"
+                    type="Default"
+                    press="onRouteLayouts"
+                />
+                <Button
+                    text="Form Validation"
+                    id="routeFormValidation"
+                    type="Default"
+                    press="onRouteFormValidation"
+                />
+                <Button
+                    text="Multivalued UI Elements"
+                    id="routeMultivaluedUI"
+                    type="Default"
+                    press="onRouteMultivaluedUI"
+                />
+                <Button
+                    text="F4 Help"
+                    id="routeF4Help"
+                    type="Default"
+                    press="onRouteF4Help"
+                />
+                <Button
+                    text="Car Booking"
+                    id="routeCarBooking"
+                    type="Default"
+                    press="onRouteCarBooking"
+                />
+                <Button
+                    text="Dialogs and Fragments"
+                    id="routeDialogFragments"
+                    type="Default"
+                    press="onRouteDialogFragments"
+                />
+                <Button
+                    text="Embedded Fragments"
+                    id="routeEmbeddedFragments"
+                    type="Default"
+                    press="onRouteHCF"
+                />
+                <Button
+                    text="I18n Form"
+                    id="routeI18nForm"
+                    type="Default"
+                    press="onRouteI18nForm"
+                />
+                <Button
+                    text="Employees"
+                    id="routeEmployees"
+                    type="Default"
+                    press="onRouteEmployees"
+                />
+                <Button
+                    text="Master-Detail Page"
+                    id="routeLogin"
+                    type="Default"
+                    press="onRouteLogin"
+                />
+            </FlexBox>
+        </content>
+
+        <!-- As per SAP guidelines, the navigation buttons should be in the footer in contentRight -->
+        <footer>
+            <Bar id="idBar">
+                <!-- Generally, the route buttons are at right of the footer. Here just for example, we have used all of them -->
+
+                <!-- It will show the content in the left of the footer -->
+                <!-- <contentLeft>
+                    <Button
+                        text="Route to Second view"
+                        id="routeBtn1"
+                        type="Default"
+                        press="onRoute1"
+                    />
+                </contentLeft> -->
+
+                <!-- It will show the content in the middle of the footer -->
+                <!-- <contentMiddle>
+                    <Button
+                        text="Route to Second view"
+                        id="routeBtn2"
+                        type="Default"
+                        press="onRoute1"
+                    />
+                </contentMiddle> -->
+
+                <!-- It will show the content in the right of the footer -->
+                <contentRight>
+                    <OverflowToolbar id="otb">
+                        <!-- <FlexBox justifyContent="SpaceBetween"> -->
+
+                        <!-- </FlexBox> -->
+                    </OverflowToolbar>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

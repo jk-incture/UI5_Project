@@ -1,0 +1,71 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.DialogFragments"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Dialog and Fragments"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <VBox
+                alignItems="Center"
+                width="100vw"
+                class="sapUiSmallMarginTop"
+            >
+                <Button
+                    text="Dialog Button 1"
+                    type="Emphasized"
+                    press="onDefaultDialog"
+                    class="sapUiSmallMarginEnd"
+                />
+                <Button
+                    text="Login"
+                    type="Emphasized"
+                    press="onOpenDialog"
+                    class="sapUiSmallMarginEnd"
+                />
+                <core:Fragment
+                    fragmentName="com.incture.mydemoproject1.fragment.LoginEmbedded"
+                    type="XML"
+                />
+                <Button
+                    text="Open"
+                    press="showSuccessPopup"
+                />
+                <List
+                    headerText="Products"
+                    items="{/productList}"
+                    class="sapUiSmallMarginTop"
+                    mode="SingleSelectMaster"
+                    selectionChange="onSelectProductList"
+                    width="80vw"
+                >
+                    <items>
+                        <ObjectListItem
+                            title="{productName}"
+                            number="{discountedPrice}"
+                            numberUnit="{currency}"
+                            numberState="{=${unitPrice} > 500 ? 'Warning' : 'Success'}"
+                        >
+                            <firstStatus>
+                                <ObjectStatus text="{status}" />
+                            </firstStatus>
+                        </ObjectListItem>
+                    </items>
+                </List>
+
+                <Button
+                    text="User Form"
+                    type="Emphasized"
+                    press="onOpenFormDialog"
+                />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

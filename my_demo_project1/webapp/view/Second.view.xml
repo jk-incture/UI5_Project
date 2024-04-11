@@ -1,0 +1,170 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.Second"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="I am second page"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <!-- Generally back buttons are showed in the header itself, not in the content. Here just for example -->
+            <Button
+                id="btn1"
+                text="Route to DemoView"
+                press="onBack"
+                class="sapUiSmallMargin"
+            />
+
+            <!-- Text element -->
+            <VBox>
+                <Text
+                    text="Font size - H1"
+                    class="sapMH1FontSize"
+                    textAlign="Center"
+                    width="100%"
+                />
+                <Text
+                    text="Font size - H2"
+                    class="sapMH2FontSize"
+                    textAlign="Center"
+                    width="100%"
+                />
+                <Text
+                    text="Font size - H3"
+                    class="sapMH3FontSize"
+                    textAlign="Center"
+                    width="100%"
+                />
+                <Text
+                    text="Font size - H4"
+                    class="sapMH4FontSize"
+                    textAlign="Center"
+                    width="100%"
+                />
+                <Text
+                    text="Font size - H5"
+                    class="sapMH5FontSize"
+                    textAlign="Center"
+                    width="100%"
+                />
+                <Text
+                    text="Font size - H6"
+                    class="sapMH6FontSize"
+                    textAlign="Center"
+                    width="100%"
+                />
+            </VBox>
+
+            <!-- Label and Input are combinely used in form elements -->
+
+            <!-- ID naming convention - idXXXYYY -->
+            <!-- XXX: name of element in short form, YYY: purpose of the element -->
+
+            <VBox class="sapUiSmallMargin sapUiMediumMarginTop">
+                <Text
+                    text="Hi! Welcome User"
+                    id="idTxtMsg"
+                    textAlign="Center"
+                    width="100%"
+                    class="sapMH3FontSize"
+                />
+                <FlexBox
+                    justifyContent="SpaceAround"
+                    alignItems="Center"
+                    class="sapUiSmallMarginBottom sapUiMediumMarginTop"
+                >
+                    <!-- For name -->
+                    <HBox alignItems="Center">
+                        <Label
+                            id="idLblName"
+                            text="Enter your name"
+                            design="Bold"
+                            required="true"
+                            class="sapUiSmallMarginEnd"
+                        />
+                        <Input
+                            id="idIpName"
+                            width="200px"
+                            placeholder="Full name"
+                            maxLength="30"
+                        />
+                    </HBox>
+
+                    <!-- For alignment -->
+                    <HBox alignItems="Center">
+                        <Label
+                            id="idLblAlign"
+                            text="Enter alignment"
+                            design="Bold"
+                            required="true"
+                            class="sapUiSmallMarginEnd"
+                        />
+                        <Input
+                            id="idIpAlign"
+                            width="200px"
+                            placeholder="Alignment"
+                            maxLength="30"
+                        />
+                    </HBox>
+                </FlexBox>
+                <HBox
+                    alignItems="Center"
+                    justifyContent="Center"
+                >
+                    <Button
+                        id="idBtnSub"
+                        type="Emphasized"
+                        text="Submit"
+                        press="onSubmit"
+                        width="100px"
+                        class="sapUiSmallMarginEnd"
+                    />
+
+                    <Button
+                        id="idBtnHideShow"
+                        type="Emphasized"
+                        text="Hide"
+                        press="onHideShow"
+                        width="100px"
+                        class="sapUiSmallMarginBegin"
+                    />
+                </HBox>
+            </VBox>
+
+            <List
+                items="{EmployeeModel>/Employees}"
+                headerText="Voters List"
+            >
+                <items>
+                    <ObjectListItem
+                        title="{EmployeeModel>Name}"
+                        number="{EmployeeModel>Country}"
+                    >
+                        <attributes>
+                            <ObjectAttribute
+                                title="Age"
+                                text="{EmployeeModel>Age}"
+                            />
+                            <ObjectAttribute
+                                title="Gender"
+                                text="{EmployeeModel>Gender}"
+                            />
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus
+                                text="{parts: [{path: 'EmployeeModel>Name'}, {path: 'EmployeeModel>Age'}], formatter: '.formatter.getVoter'}"
+                            />
+                            <!-- Here, in the parts, the 2 paths i.e, name and age are the parameters for getVoter function in the formatter. -->
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+            
+        </content>
+    </Page>
+</mvc:View>

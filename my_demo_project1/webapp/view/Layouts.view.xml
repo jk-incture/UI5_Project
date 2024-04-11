@@ -1,0 +1,402 @@
+<mvc:View
+    xmlns:form="sap.ui.layout.form"
+    controllerName="com.incture.mydemoproject1.controller.Layouts"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+>
+    <Page
+        id="page"
+        title="Layouts"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <!-- Layouts -->
+        <content>
+            <!-- Vbox - Vertical box -->
+            <Label text="Vertical Box" />
+            <VBox>
+                <Button
+                    text="Button 1"
+                    type="Emphasized"
+                />
+                <Button
+                    text="Button 2"
+                    type="Emphasized"
+                />
+                <Button
+                    text="Button 3"
+                    type="Emphasized"
+                />
+            </VBox>
+
+            <!-- HBox - Horizontal box -->
+            <Label text="Horizontal box" />
+            <HBox>
+                <Button
+                    text="Button 1"
+                    type="Emphasized"
+                />
+                <Button
+                    text="Button 2"
+                    type="Emphasized"
+                />
+                <Button
+                    text="Button 3"
+                    type="Emphasized"
+                />
+            </HBox>
+
+            <!-- FlexBox -->
+            <FlexBox
+                justifyContent="Center"
+                alignItems="Center"
+                class="mybackgroundcolor"
+            >
+                <VBox>
+                    <Label
+                        text="Login Page"
+                        design="Bold"
+                        class="sapUiSmallMarginBottom myTextColor myTextFont"
+                    />
+                    <Label
+                        text="Username"
+                        design="Bold"
+                        class="myTextColor labelFont"
+                    />
+                    <Input
+                        type="Text"
+                        placeholder="Enter your username"
+                    />
+                    <Label
+                        text="Password"
+                        design="Bold"
+                        class="myTextColor labelFont margintop"
+                    />
+                    <Input
+                        type="Password"
+                        placeholder="Enter your password"
+                    />
+                    <Button
+                        text="Login"
+                        type="Emphasized"
+                        class="loginBtn"
+                    />
+                </VBox>
+            </FlexBox>
+
+            <!-- Grid Layout -->
+            <!-- 2 columns style -->
+
+            <!-- Panel is a container to hold grid layouts -->
+            <Panel
+                headerText="Employee Information"
+                class="sapUiMediumMarginTop"
+            >
+                <l:Grid
+                    class="sapUiLargeSmallTop"
+                    vSpacing="0"
+                >
+                    <!-- vSpacing is the vertical spacing -->
+                    <l:content>
+                        <!-- layoutData and gridData defines how many grid I want to allocate. Here we are implementing 2 column style. So, 6 grids for each column. L6 means 6 grids for label in laptop view, and M6 means the same in mobile view -->
+                        <Label text="Employee ID">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Label>
+
+                        <!-- Similarily for the input, 6 grids take space for the input box in laptop as well as in mobile -->
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Name">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Designation">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Skills">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Email">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Email">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Phone no.">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Tel">
+                            <layoutData>
+                                <l:GridData span="L6 M6" />
+                            </layoutData>
+                        </Input>
+                    </l:content>
+                </l:Grid>
+            </Panel>
+
+            <!-- 4 column style -->
+            <!-- In 4 column style, we divide the page into 4 parts, each column having width of 3 columns, so we need to give the L and M values as 3 and 3 -->
+
+            <Panel
+                headerText="Employee Information"
+                class="sapUiMediumMarginTop"
+            >
+                <l:Grid
+                    class="sapUiLargeSmallTop"
+                    vSpacing="0"
+                >
+                    <!-- vSpacing is the vertical spacing -->
+                    <l:content>
+                        <!-- layoutData and gridData defines how many grid I want to allocate. Here we are implementing 2 column style. So, 6 grids for each column. L6 means 6 grids for label in laptop view, and M6 means the same in mobile view -->
+                        <Label text="Employee ID">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Label>
+
+                        <!-- Similarily for the input, 6 grids take space for the input box in laptop as well as in mobile -->
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Name">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Designation">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Skills">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Text">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Email">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Email">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Input>
+
+                        <Label text="Employee Phone no.">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Label>
+                        <Input type="Tel">
+                            <layoutData>
+                                <l:GridData span="L3 M3" />
+                            </layoutData>
+                        </Input>
+                    </l:content>
+                </l:Grid>
+            </Panel>
+
+            <!-- Simple form layout -->
+
+            <!-- 2 column layout -->
+            <f:SimpleForm
+                title="Employee Information using SimpleForm Layout"
+                class="sapUiSmallMarginTop"
+                layout="ResponsiveGridLayout"
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="4"
+                emptySpanM="4"
+                editable="true"
+            >
+                <!-- The label span defines how many grids the label will take, and the empty span defines how many grids will left out, i.e, the (12 - labelspan - emptyspan) grids are available for the input field -->
+
+                <!-- editable true means it will properly align label and input fields -->
+
+                <f:content>
+                    <Label text="Employee ID" />
+                    <Input type="Number" />
+
+                    <Label text="Employee Name" />
+                    <Input type="Text" />
+
+                    <Label text="Employee Designation" />
+                    <Input type="Text" />
+
+                    <Label text="Employee Skill" />
+                    <Input type="Text" />
+
+                    <Label text="Employee Email" />
+                    <Input type="Email" />
+
+                    <Label text="Employee Phone" />
+                    <Input type="Tel" />
+                </f:content>
+            </f:SimpleForm>
+
+            <!-- SimpleForm 4 column layout -->
+
+            <!-- It is same as the previous one, but we can't directly create an 4 column layout using simpleForm method. For this, we need to create 2 containers, that will automatically adjust side by side which seems as 4 col layout -->
+            <!-- For 4 column layout, we need to set the emptySpan property as 0, as no empty space is needed. -->
+
+            <f:SimpleForm
+                title="4 column layout - SimpleForm"
+                labelSpanL="3"
+                labelSpanM="3"
+                emptySpanL="0"
+                emptySpanM="0"
+                layout="ResponsiveGridLayout"
+                editable="true"
+                class="sapUiSmallMarginTop"
+            >
+                <f:content>
+                    <!-- Where ever this Title tag is written, the view automatically understand to make it as a container. -->
+                    <core:Title text="Basic Information" />
+                    <Label text="Employee ID" />
+                    <Input type="Number" />
+
+                    <Label text="Employee Name" />
+                    <Input type="Text" />
+
+                    <Label text="Employee Designation" />
+                    <Input type="Text" />
+
+                    <core:Title text="Contact Information" />
+                    <Label text="Employee Skill" />
+                    <Input type="Text" />
+
+                    <Label text="Employee Email" />
+                    <Input type="Email" />
+
+                    <Label text="Employee Phone" />
+                    <Input type="Tel" />
+                </f:content>
+            </f:SimpleForm>
+
+            <!-- Object Header and Icon tab-bar -->
+            <!-- The object header and icon tabbar are paralley written, and it is a static layout, i.e, it has a fixed design and attributes, we have to follow this way only. -->
+
+            <ObjectHeader
+                title="Washing Machine"
+                number="18000"
+                numberUnit="INR"
+                backgroundDesign="Solid"
+            >
+                <attributes>
+                    <ObjectAttribute
+                        title="Material ID"
+                        text="MAT003"
+                    />
+                    <ObjectAttribute
+                        title="Material Description"
+                        text="Fully Automatic"
+                    />
+                </attributes>
+                <statuses>
+                    <ObjectStatus text="APPROVED" />
+                </statuses>
+            </ObjectHeader>
+
+            <IconTabBar>
+                <items>
+                    <IconTabFilter icon="sap-icon://hint">
+                        <f:SimpleForm
+                            title="Employee Information using SimpleForm Layout"
+                            class="sapUiSmallMarginTop"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            editable="true"
+                        >
+                            <f:content>
+                                <Label text="Material ID" />
+                                <Input type="Text" value="MAT003" />
+
+                                <Label text="Material Name" />
+                                <Input type="Text" value="Washing Machine" />
+
+                                <Label text="Material Description" />
+                                <Input type="Text" value="Fully Automatic" />
+
+                                <Label text="Material Price" />
+                                <Input type="Number" value="18000.00" />
+
+                                <Label text="Currency Code" />
+                                <Input type="Text" value="INR" />
+
+                                <Label text="Material Status" />
+                                <Input type="Text" value="Approved" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://notes" />
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

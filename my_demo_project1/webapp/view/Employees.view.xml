@@ -1,0 +1,64 @@
+<mvc:View
+    xmlns:table="sap.ui.table"
+    controllerName="com.incture.mydemoproject1.controller.Employees"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Employees"
+        showNavButton="true"
+        navButtonPress="onBack"
+    >
+        <content>
+            <Table
+                id="idTableEmp"
+                items="{/inctureEmployees}"
+                mode="SingleSelectMaster"
+                selectionChange="onSelectEmployee"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Text
+                            text="Employee Details"
+                            class="sapMH3FontSize"
+                        />
+                        <ToolbarSpacer />
+                        <SearchField
+                            width="30%"
+                            liveChange="onSearchEmployee"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Department" />
+                    </Column>
+                    <Column>
+                        <Text text="Gender" />
+                    </Column>
+                    <Column>
+                        <Text text="Base Location" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Name}" />
+                            <Text text="{Department}" />
+                            <Text text="{Gender}" />
+                            <Text text="{BaseLocation}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

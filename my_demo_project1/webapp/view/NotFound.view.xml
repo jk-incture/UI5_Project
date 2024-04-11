@@ -1,0 +1,15 @@
+<mvc:View
+    controllerName="com.incture.mydemoproject1.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Error"
+    >
+        <content>
+            <Text text="Page not found !!"></Text>
+        </content>
+    </Page>
+</mvc:View>

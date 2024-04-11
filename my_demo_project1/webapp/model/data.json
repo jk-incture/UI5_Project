@@ -1,0 +1,626 @@
+{
+    "test": "test-data",
+    "empid": "",
+    "empname": "",
+    "empdesig": "",
+    "empskill": "",
+    "empemail": "",
+    "empphone": "",
+    "aRelations": [
+        {
+            "relation": "Mother"
+        },
+        {
+            "relation": "Father"
+        },
+        {
+            "relation": "Brother"
+        },
+        {
+            "relation": "Sister"
+        },
+        {
+            "relation": "Uncle"
+        },
+        {
+            "relation": "Aunt"
+        }
+    ],
+    "aLanguages": [
+        {
+            "language": "Hindi"
+        },
+        {
+            "language": "Odia"
+        },
+        {
+            "language": "Telugu"
+        },
+        {
+            "language": "Tamil"
+        },
+        {
+            "language": "Kannada"
+        },
+        {
+            "language": "Bengali"
+        },
+        {
+            "language": "Marathi"
+        }
+    ],
+    "aGender": [
+        {
+            "gender": "Male"
+        },
+        {
+            "gender": "Female"
+        },
+        {
+            "gender": "Others"
+        }
+    ],
+    "aEmployees": [
+        {
+            "empid": 101,
+            "empname": "Abhinay",
+            "empdesig": "Manager",
+            "empskill": "ABAP",
+            "empemail": "abhinay@gmail.com",
+            "emploc": "Hyderabad"
+        },
+        {
+            "empid": 102,
+            "empname": "Lalit",
+            "empdesig": "Team Lead",
+            "empskill": "Java",
+            "empemail": "lalit@gmail.com",
+            "emploc": "Vijaywada"
+        },
+        {
+            "empid": 103,
+            "empname": "Gourav",
+            "empdesig": "Intern",
+            "empskill": "UI5",
+            "empemail": "gourav@gmail.com",
+            "emploc": "Delhi"
+        },
+        {
+            "empid": 104,
+            "empname": "Shristi",
+            "empdesig": "IT Lead",
+            "empskill": "Hardware",
+            "empemail": "shristi@gmail.com",
+            "emploc": "Punjab"
+        },
+        {
+            "empid": 105,
+            "empname": "Lokesh",
+            "empdesig": "HR",
+            "empskill": "Managerial Skills",
+            "empemail": "lokesh@gmail.com",
+            "emploc": "Bhubaneshwar"
+        },
+        {
+            "empid": 106,
+            "empname": "Raveena",
+            "empdesig": "PPL Manager",
+            "empskill": "React, Node",
+            "empemail": "raveena@gmail.com",
+            "emploc": "Sambalpur"
+        },
+        {
+            "empid": 101,
+            "empname": "Satish",
+            "empdesig": "SSE",
+            "empskill": "Docker",
+            "empemail": "satish@gmail.com",
+            "emploc": "Bangalore"
+        },
+        {
+            "empid": 101,
+            "empname": "Naveen",
+            "empdesig": "ASE",
+            "empskill": "Java, Spring",
+            "empemail": "naveen@gmail.com",
+            "emploc": "Indore"
+        }
+    ],
+    "cardDetails": [
+        {
+            "cardType": "Debit Card",
+            "cardNumber": "0000000000001",
+            "cardCompany": "Master Card",
+            "assignedDate": "23 Aug, 2017",
+            "state": true
+        },
+        {
+            "cardType": "Credit Card",
+            "cardNumber": "0000000000768",
+            "cardCompany": "Visa Card",
+            "assignedDate": "03 Sep, 2022",
+            "state": false
+        },
+        {
+            "cardType": "Debit Card",
+            "cardNumber": "0000000009856",
+            "cardCompany": "Rupay Card",
+            "assignedDate": "18 Mar, 2019",
+            "state": true
+        }
+    ],
+    "productList": [
+        {
+            "id": 1,
+            "productName": "Laptop",
+            "unitPrice": 499,
+            "currency": "INR",
+            "status": "Available",
+            "discountedPrice": 499
+        },
+        {
+            "id": 2,
+            "productName": "Smartphone",
+            "unitPrice": 699,
+            "currency": "INR",
+            "status": "Available",
+            "discountedPrice": 699
+        },
+        {
+            "id": 3,
+            "productName": "Headphones",
+            "unitPrice": 149,
+            "currency": "INR",
+            "status": "Out of Stock",
+            "discountedPrice": 149
+        },
+        {
+            "id": 4,
+            "productName": "Tablet",
+            "unitPrice": 399,
+            "currency": "INR",
+            "status": "Available",
+            "discountedPrice": 399
+        },
+        {
+            "id": 5,
+            "productName": "Camera",
+            "unitPrice": 549,
+            "currency": "INR",
+            "status": "Available",
+            "discountedPrice": 549
+        },
+        {
+            "id": 6,
+            "productName": "Smartwatch",
+            "unitPrice": 299,
+            "currency": "INR",
+            "status": "Out of Stock",
+            "discountedPrice": 299
+        },
+        {
+            "id": 7,
+            "productName": "Wireless Earbuds",
+            "unitPrice": 129,
+            "currency": "INR",
+            "status": "Out of Stock",
+            "discountedPrice": 129
+        },
+        {
+            "id": 8,
+            "productName": "Gaming Console",
+            "unitPrice": 499,
+            "currency": "INR",
+            "status": "Available",
+            "discountedPrice": 499
+        },
+        {
+            "id": 9,
+            "productName": "Monitor",
+            "unitPrice": 299,
+            "currency": "INR",
+            "status": "Available",
+            "discountedPrice": 299
+        },
+        {
+            "id": 10,
+            "productName": "Printer",
+            "unitPrice": 199,
+            "currency": "INR",
+            "status": "Out of Stock",
+            "discountedPrice": 199
+        }
+    ],
+    "sales": [
+        {
+            "CategoryID": 1,
+            "CategoryName": "Beverages",
+            "ProductName": "Chai",
+            "ProductSales": "4887.00"
+        },
+        {
+            "CategoryID": 2,
+            "CategoryName": "Condiments",
+            "ProductName": "Aniseed Syrup",
+            "ProductSales": "1724.00"
+        },
+        {
+            "CategoryID": 3,
+            "CategoryName": "Confections",
+            "ProductName": "Chocolade",
+            "ProductSales": "1282.01"
+        },
+        {
+            "CategoryID": 4,
+            "CategoryName": "Dairy Products",
+            "ProductName": "Flotemysost",
+            "ProductSales": "8438.76"
+        },
+        {
+            "CategoryID": 5,
+            "CategoryName": "Grains/Cereals",
+            "ProductName": "Ravioli Angelo",
+            "ProductSales": "2156.70"
+        },
+        {
+            "CategoryID": 6,
+            "CategoryName": "Meat/Poultry",
+            "ProductName": "Perth Pasties",
+            "ProductSales": "10661.93"
+        },
+        {
+            "CategoryID": 7,
+            "CategoryName": "Produce",
+            "ProductName": "Tofu",
+            "ProductSales": "6234.48"
+        },
+        {
+            "CategoryID": 8,
+            "CategoryName": "Seafood",
+            "ProductName": "Escargots de Bourgogne",
+            "ProductSales": "2076.28"
+        }
+    ],
+    "inctureEmployees": [
+        {
+            "Name": "Jyotiranjan",
+            "Department": "Products",
+            "Gender": "Male",
+            "BaseLocation": "Bhubaneshwar",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Aashwasti",
+                    "Number": "1234567890"
+                },
+                "HomeAddress": {
+                    "Street": "Gothapatna Road",
+                    "FlatNo": "109",
+                    "City": "Bangalore"
+                }
+            }
+        },
+        {
+            "Name": "Aditi",
+            "Department": "Human Resources",
+            "Gender": "Female",
+            "BaseLocation": "Mumbai",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Rajesh",
+                    "Number": "9876543210"
+                },
+                "HomeAddress": {
+                    "Street": "Marine Drive",
+                    "FlatNo": "502",
+                    "City": "Mumbai"
+                }
+            }
+        },
+        {
+            "Name": "Siddharth",
+            "Department": "Finance",
+            "Gender": "Male",
+            "BaseLocation": "Delhi",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Priya",
+                    "Number": "8765432109"
+                },
+                "HomeAddress": {
+                    "Street": "Connaught Place",
+                    "FlatNo": "301",
+                    "City": "Delhi"
+                }
+            }
+        },
+        {
+            "Name": "Priya",
+            "Department": "Marketing",
+            "Gender": "Female",
+            "BaseLocation": "Kolkata",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Rahul",
+                    "Number": "8901234567"
+                },
+                "HomeAddress": {
+                    "Street": "Park Street",
+                    "FlatNo": "401",
+                    "City": "Kolkata"
+                }
+            }
+        },
+        {
+            "Name": "Rahul",
+            "Department": "Technology",
+            "Gender": "Male",
+            "BaseLocation": "Chennai",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Aditi",
+                    "Number": "9012345678"
+                },
+                "HomeAddress": {
+                    "Street": "Mount Road",
+                    "FlatNo": "705",
+                    "City": "Chennai"
+                }
+            }
+        },
+        {
+            "Name": "Aarti",
+            "Department": "Sales",
+            "Gender": "Female",
+            "BaseLocation": "Hyderabad",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Suresh",
+                    "Number": "7654321098"
+                },
+                "HomeAddress": {
+                    "Street": "Banjara Hills",
+                    "FlatNo": "1001",
+                    "City": "Hyderabad"
+                }
+            }
+        },
+        {
+            "Name": "Manoj",
+            "Department": "Operations",
+            "Gender": "Male",
+            "BaseLocation": "Pune",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Pooja",
+                    "Number": "6543210987"
+                },
+                "HomeAddress": {
+                    "Street": "Koregaon Park",
+                    "FlatNo": "201",
+                    "City": "Pune"
+                }
+            }
+        },
+        {
+            "Name": "Pooja",
+            "Department": "Research and Development",
+            "Gender": "Female",
+            "BaseLocation": "Jaipur",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Manoj",
+                    "Number": "8765432109"
+                },
+                "HomeAddress": {
+                    "Street": "Tonk Road",
+                    "FlatNo": "904",
+                    "City": "Jaipur"
+                }
+            }
+        },
+        {
+            "Name": "Vijay",
+            "Department": "Customer Service",
+            "Gender": "Male",
+            "BaseLocation": "Ahmedabad",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Shilpa",
+                    "Number": "7890123456"
+                },
+                "HomeAddress": {
+                    "Street": "C.G. Road",
+                    "FlatNo": "302",
+                    "City": "Ahmedabad"
+                }
+            }
+        },
+        {
+            "Name": "Shilpa",
+            "Department": "Quality Assurance",
+            "Gender": "Female",
+            "BaseLocation": "Surat",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Vijay",
+                    "Number": "8901234567"
+                },
+                "HomeAddress": {
+                    "Street": "Adajan",
+                    "FlatNo": "1103",
+                    "City": "Surat"
+                }
+            }
+        },
+        {
+            "Name": "Ravi",
+            "Department": "Logistics",
+            "Gender": "Male",
+            "BaseLocation": "Nagpur",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Sneha",
+                    "Number": "9012345678"
+                },
+                "HomeAddress": {
+                    "Street": "Dharampeth",
+                    "FlatNo": "705",
+                    "City": "Nagpur"
+                }
+            }
+        },
+        {
+            "Name": "Sneha",
+            "Department": "Supply Chain",
+            "Gender": "Female",
+            "BaseLocation": "Indore",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Ravi",
+                    "Number": "6543210987"
+                },
+                "HomeAddress": {
+                    "Street": "Vijay Nagar",
+                    "FlatNo": "401",
+                    "City": "Indore"
+                }
+            }
+        },
+        {
+            "Name": "Rajesh",
+            "Department": "Administration",
+            "Gender": "Male",
+            "BaseLocation": "Lucknow",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Anita",
+                    "Number": "9876543210"
+                },
+                "HomeAddress": {
+                    "Street": "Hazratganj",
+                    "FlatNo": "603",
+                    "City": "Lucknow"
+                }
+            }
+        },
+        {
+            "Name": "Anita",
+            "Department": "Legal",
+            "Gender": "Female",
+            "BaseLocation": "Varanasi",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Rajesh",
+                    "Number": "8901234567"
+                },
+                "HomeAddress": {
+                    "Street": "Sigra",
+                    "FlatNo": "901",
+                    "City": "Varanasi"
+                }
+            }
+        },
+        {
+            "Name": "Arjun",
+            "Department": "Training",
+            "Gender": "Male",
+            "BaseLocation": "Patna",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Meera",
+                    "Number": "9012345678"
+                },
+                "HomeAddress": {
+                    "Street": "Boring Road",
+                    "FlatNo": "501",
+                    "City": "Patna"
+                }
+            }
+        },
+        {
+            "Name": "Meera",
+            "Department": "Education",
+            "Gender": "Female",
+            "BaseLocation": "Ranchi",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Arjun",
+                    "Number": "6543210987"
+                },
+                "HomeAddress": {
+                    "Street": "Kanke Road",
+                    "FlatNo": "802",
+                    "City": "Ranchi"
+                }
+            }
+        },
+        {
+            "Name": "Sanjay",
+            "Department": "Consulting",
+            "Gender": "Male",
+            "BaseLocation": "Guwahati",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Kavita",
+                    "Number": "8901234567"
+                },
+                "HomeAddress": {
+                    "Street": "Beltola",
+                    "FlatNo": "304",
+                    "City": "Guwahati"
+                }
+            }
+        },
+        {
+            "Name": "Kavita",
+            "Department": "Public Relations",
+            "Gender": "Female",
+            "BaseLocation": "Chandigarh",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Sanjay",
+                    "Number": "9876543210"
+                },
+                "HomeAddress": {
+                    "Street": "Sector 17",
+                    "FlatNo": "602",
+                    "City": "Chandigarh"
+                }
+            }
+        },
+        {
+            "Name": "Amit",
+            "Department": "Information Technology",
+            "Gender": "Male",
+            "BaseLocation": "Thiruvananthapuram",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Neha",
+                    "Number": "8765432109"
+                },
+                "HomeAddress": {
+                    "Street": "MG Road",
+                    "FlatNo": "803",
+                    "City": "Thiruvananthapuram"
+                }
+            }
+        },
+        {
+            "Name": "Neha",
+            "Department": "Engineering",
+            "Gender": "Female",
+            "BaseLocation": "Coimbatore",
+            "AdditionalDetails": {
+                "EmergencyContact": {
+                    "Name": "Amit",
+                    "Number": "7890123456"
+                },
+                "HomeAddress": {
+                    "Street": "Race Course Road",
+                    "FlatNo": "202",
+                    "City": "Coimbatore"
+                }
+            }
+        }
+    ]
+}
